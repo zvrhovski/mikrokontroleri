@@ -18,6 +18,6 @@ int main(){
         } else {
             display.scroll("tech43");
         }
-    }while(mybutB);
+    }while(mybutB == true);
 }
 
