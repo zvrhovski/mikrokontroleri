@@ -4,17 +4,20 @@
 */
 #include "MicroBit.h"
 
-MicroBitDisplay display; // stvaranje objekta display
+MicroBitDisplay display;
 
-DigitalIn mybut(BUTTON_A); // stvaranje objekta za tipku A
+DigitalIn mybutA(BUTTON_A);
+DigitalIn mybutB(BUTTON_B);
 
-int main()
-{
-    while(1){
-        if(mybut){ // ako je tipka A pritisnuta
-            display.scroll("B:IT.con"); // na display-u prikazuj B:IT.con
-        } else { // inače 
-            display.scroll("tech43"); // na display-u prikazuj tech43
+
+int main(){
+    
+    do{
+        if(mybutA == false){
+            display.scroll("B:IT.con");
+        } else {
+            display.scroll("tech43");
         }
-    }
+    }while(mybutB);
 }
+
